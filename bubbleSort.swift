@@ -2,10 +2,10 @@
 
 func bubbleSort(_ nums: inout [Int]) {
     if nums.count < 1 {
-        returnn
+        return
     }
-    for i in 1...nums.count-1 {
-        for j in 0...nums.count - i {
+    for i in 0...nums.count-2 {
+        for j in i+1...nums.count - 1 {
             if nums[i] > nums[j] {
                 (nums[i], nums[j]) = (nums[j], nums[i])
             }
@@ -13,6 +13,6 @@ func bubbleSort(_ nums: inout [Int]) {
     }
 }
 
-var nums = [1,3,4,1,2,4,2,42,34,2,242,5,5,24,25,235,6,23,25,6,345]
+var nums = [1,3,4,1,2,4,2,42,34,2,242,5,5,24,25,235,6,23,25,6,345,5]
 bubbleSort(&nums)
 print(nums)

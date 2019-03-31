@@ -12,7 +12,6 @@ func insertSort(_ nums: inout [Int]) {
         nums[j] = target 
     }
 }
-
 var nums = [1,3,4,1,2,4,2,42,34,2,242,5,5,24,25,235,6,23,25,6,345]
 insertSort(&nums)
 print(nums)

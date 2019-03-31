@@ -1,5 +1,3 @@
-#!/usr/bin/swift
-
 func quickSort (_ nums: inout [Int], _ m: Int, _ n: Int) {
     if m > n {
         return
@@ -11,11 +9,16 @@ func quickSort (_ nums: inout [Int], _ m: Int, _ n: Int) {
         while (i < j && nums[j] >= temp) {
             j -= 1
         }
-        nums[i] = nums[j]
+        if i < j {
+          nums[i] = nums[j]
+          i += 1 
+        }
         while ( i < j && nums[i] <= temp) {
             i += 1
         }
-        nums[j] = nums[i]
+        if i < j {
+          nums[j] = nums[i]
+        }
     }
     nums[i] = temp
     quickSort(&nums, m, i-1)
